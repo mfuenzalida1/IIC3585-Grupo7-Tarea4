@@ -36,7 +36,9 @@ async function prioritizeNetwork(request) {
     const dynamicCache = await caches.open('dynamic-cache');
     try {
         const networkResponse = await fetch(request);
-        dynamicCache.put(request, networkResponse.clone());
+        if (request.method != "POST") {
+            dynamicCache.put(request, networkResponse.clone());
+        }
         return networkResponse;
     } catch (err) {
         const cachedResponse = await dynamicCache.match(request);

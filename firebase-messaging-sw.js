@@ -3,11 +3,19 @@ importScripts('https://www.gstatic.com/firebasejs/7.14.3/firebase-messaging.js')
 // For an optimal experience using Cloud Messaging, also add the Firebase SDK for Analytics.
 importScripts('https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js');
 
-// Initialize the Firebase app in the service worker by passing in the
-// messagingSenderId.
-firebase.initializeApp({
-    'messagingSenderId': "1076060879168"
-});
+var firebaseConfig = {
+    apiKey: "AIzaSyCiK6T8cIEyqs-dkLzelgtK4y9dIfouGN4",
+    authDomain: "disenoappwebt4.firebaseapp.com",
+    databaseURL: "https://disenoappwebt4.firebaseio.com",
+    projectId: "disenoappwebt4",
+    storageBucket: "disenoappwebt4.appspot.com",
+    messagingSenderId: "1076060879168",
+    appId: "1:1076060879168:web:927d0561c2e88c8f5962a5",
+    measurementId: "G-LNKXE9DH4J"
+};
+
+// Initialize the Firebase app in the service worker
+firebase.initializeApp(firebaseConfig);
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.

@@ -21,54 +21,18 @@ const messaging = firebase.messaging();
 messaging.usePublicVapidKey('BKqpa-m7GUPVLteUIOxbCqYKLZMqSkSYli9wlcZHrmzVKtHgebFjSl-E5QskBP-MbYU-QoWy4Mwn04Mv6d1pIPs');
 // [END set_public_vapid_key]
 
-messaging
-    .requestPermission()
-    .then(function() {
+messaging.requestPermission().then(function() {
         console.log("Notification permission granted.");
-
         // get the token in the form of promise
         return messaging.getToken();
     })
     .then(function(token) {
         console.log("token is : " + token);
-
-        /*
-        fetch("https://fcm.googleapis.com/fcm/send", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "key=" + "AAAA-oo5-UA:APA91bHW97cZqUOdd4EETRyjwUk_yo0IqIxCjHGuN5Xol2odNGuLOJknQRvtI4DgNIf0-O46Lozy0xgmJ62uIhgAcoAxuUOdjxR6nK7QpPnyFjJU7VlKD959fKav9Z4vW8m1GtfCjjmS"
-            },
-            body: JSON.stringify(
-                {
-                    "data": {
-                        "notification": {
-                            "title": "Cryptosearch",
-                            "body": "Bienvenido!",
-                        }
-                    },
-                    "to": token
-                }
-            )
-        }).then(res => {
-            console.log("Request complete! response:", res);
-        });
-        */
-
     })
     .catch(function(err) {
         console.log("Unable to get permission to notify.", err);
     });
 
-messaging.onMessage(function(payload) {
-    console.log("Message received. ", payload);
-    console.log(JSON.stringify(payload));
-    //kenng - foreground notifications
-    const { title, ...options } = payload.notification;
-    navigator.serviceWorker.ready.then(registration => {
-        registration.showNotification(title, options);
-    });
-});
 
 // IDs of divs that display Instance ID token UI or request permission UI.
 const tokenDivId = 'token_div';
@@ -92,4 +56,9 @@ messaging.onTokenRefresh(() => {
         console.log('Unable to retrieve refreshed token ', err);
         showToken('Unable to retrieve refreshed token ', err);
     });
+});
+
+// Callback para recibir mensajes en PRIMER PLANO
+messaging.onMessage((payload) => {
+    console.log('Message received. ', payload);
 });
