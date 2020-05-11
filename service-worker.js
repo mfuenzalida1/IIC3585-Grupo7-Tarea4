@@ -1,10 +1,10 @@
-const cacheName = 'news-v1';
+const cacheName = 'criptosearch';
 
 const staticAssets = [
     './',
     './app.js',
     './styles.css',
-    './fallback.json',
+    './neterr.json',
     './images/fetch-dog.jpg'
 ];
 
@@ -21,25 +21,26 @@ self.addEventListener('fetch', event => {
     const request = event.request;
     const url = new URL(request.url);
     if (url.origin === location.origin) {
-        event.respondWith(cacheFirst(request));
+        event.respondWith(prioritizeNetwork(request));
+        //event.respondWith(prioritizeCache(request));
     } else {
-        event.respondWith(networkFirst(request));
+        event.respondWith(prioritizeNetwork(request));
     }
 });
 
-async function cacheFirst(request) {
+async function prioritizeCache(request) {
     const cachedResponse = await caches.match(request);
     return cachedResponse || fetch(request);
 }
 
-async function networkFirst(request) {
-    const dynamicCache = await caches.open('news-dynamic');
+async function prioritizeNetwork(request) {
+    const dynamicCache = await caches.open('dynamic-cache');
     try {
         const networkResponse = await fetch(request);
         dynamicCache.put(request, networkResponse.clone());
         return networkResponse;
     } catch (err) {
         const cachedResponse = await dynamicCache.match(request);
-        return cachedResponse || await caches.match('./fallback.json');
+        return cachedResponse || await caches.match('./neterr.json');
     }
 }

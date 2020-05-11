@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <title>CRIPTOSEARCH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.4/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.4/dist/semantic.min.js"></script>
     <meta name="theme-color" content="#ffffff" />
 </head>
 
@@ -15,10 +17,14 @@
     <header>
         <h1>CriptoSearch</h1>
     </header>
+    <br>
     <div class="container">
-        <select id="sources"></select>
+        <select class="ui search dropdown" id="sources"></select>
     </div>
-    <main></main>
+    <br>
+    <div>
+        <main class="ui cards link"></main>
+    </div>
     <script src="app.js"></script>
 </body>
 

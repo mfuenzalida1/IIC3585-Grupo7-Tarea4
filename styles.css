@@ -7,7 +7,6 @@ body {
 h1 {
     text-transform: uppercase;
     font-weight: 300;
-    margin: auto;
     padding-top: 20;
     padding-bottom: 100;
 }
@@ -17,6 +16,10 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+header h1 {
+    margin: auto;
 }
 
 main {
@@ -45,6 +48,17 @@ main {
     color: inherit;
 }
 
-.article img {
+.image {
+    width: 100% !important;
+    height: 180px;
+    margin: auto;
+}
+
+.description {
     width: 100%;
+}
+
+.card-item {
+    margin-left: 50px !important;
+    margin-top: 50px !important;
 }

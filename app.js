@@ -7,9 +7,9 @@ const newsArticles = document.querySelector('main');
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () =>
-        navigator.serviceWorker.register('sw.js')
+        navigator.serviceWorker.register('service-worker.js')
         .then(registration => console.log('Service Worker registered'))
-        .catch(err => 'SW registration failed'));
+        .catch(err => 'service worker registration failed'));
 }
 
 window.addEventListener('load', e => {
@@ -44,12 +44,30 @@ async function updateNews(source = defaultSource) {
 
 function createArticle(article) {
     return `
-    <div class="article">
-		<a href="${article.url}">
-			<h2>${article.title}</h2>
-			<img src="${article.urlToImage}" alt="${article.title}">
-			<p>${article.description}</p>
-		</a>
-    </div>
+    <div class="card card-item">
+        <div>
+            <img class="image" src="${article.urlToImage}">
+        </div>
+        <div class="content">
+            <div class="header">
+                ${article.title}
+            </div>
+            <div class="meta">
+                <a>${article.value}</a>
+            </div>
+            <div class="description">
+                ${article.description}
+            </div>
+        </div>
+        <div class="extra content">
+            <span class="right floated">
+                <i class="heart outline like icon"></i>
+                17 likes
+            </span>
+            <i class="comment icon"></i>
+            3 comments
+        </div>
+    </div> 
+
 	`;
 }
