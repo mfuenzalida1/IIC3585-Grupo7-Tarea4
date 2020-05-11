@@ -53,7 +53,7 @@ function createArticle(article) {
                 ${article.title}
             </div>
             <div class="meta">
-                <a>${article.value}</a>
+                <a>${article.author}</a>
             </div>
             <div class="description">
                 ${article.description}
