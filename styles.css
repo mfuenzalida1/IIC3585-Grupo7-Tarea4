@@ -2,6 +2,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     margin: 8px;
+    background: #afceeb !important;
 }
 
 h1 {
@@ -19,6 +20,8 @@ header {
 }
 
 header h1 {
+    padding-top: 30px;
+    padding-bottom: 10px;
     margin: auto;
 }
 
@@ -61,4 +64,24 @@ main {
 .card-item {
     margin-left: 50px !important;
     margin-top: 50px !important;
+}
+
+.install-btn {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    top: 20px;
+    right: 20px;
+    font-size: 16px !important;
+    font-weight: 900;
+}
+
+.title-first {
+    color: #007aaa;
+    font-size: 38px !important;
+}
+
+.title-second {
+    color: #445357;
+    font-size: 38px !important;
 }

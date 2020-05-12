@@ -1,11 +1,11 @@
-const cacheName = 'criptosearch';
+const cacheName = 'cryptosearch';
 
 const staticAssets = [
     './',
     './app.js',
     './styles.css',
     './neterr.json',
-    './images/fetch-dog.jpg'
+    './images/neterr.png'
 ];
 
 self.addEventListener('install', async function() {
