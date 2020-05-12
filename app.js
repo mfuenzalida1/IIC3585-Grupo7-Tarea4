@@ -1,4 +1,4 @@
-const apiKey = '678473fb64b44950ada26c4d7a0b3614';
+const apiKey = "678473fb64b44950ada26c4d7a0b3614";
 const defaultSource = '"bitcoin" cryptocurrency';
 const sourceSelector = document.querySelector('#sources');
 const newsArticles = document.querySelector('main');
@@ -42,9 +42,17 @@ async function updateNews(source = defaultSource) {
         json.articles.map(createArticle).join('\n');
 }
 
+function randomRange(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function openWebsite(url) {
+    window.open(url);
+}
+
 function createArticle(article) {
     return `
-    <div class="card card-item">
+    <div class="card card-item" onClick="openWebsite('${article.url}')">
         <div>
             <img class="image" src="${article.urlToImage}">
         </div>
@@ -62,10 +70,10 @@ function createArticle(article) {
         <div class="extra content">
             <span class="right floated">
                 <i class="heart outline like icon"></i>
-                17 likes
+                ${parseInt(randomRange(1, 300))} likes
             </span>
             <i class="comment icon"></i>
-            3 comments
+            ${parseInt(randomRange(0, 30))}
         </div>
     </div> 
 

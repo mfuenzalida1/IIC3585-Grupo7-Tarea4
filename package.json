@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^8.2.0",
     "firebase": "^7.14.3",
     "fomantic-ui": "^2.8.4",
     "fomantic-ui-css": "^2.8.4",
