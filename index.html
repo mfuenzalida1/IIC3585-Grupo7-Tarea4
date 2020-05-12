@@ -25,13 +25,19 @@
         </h1>
     </header>
     <br>
-    <div class="container">
-        <select class="ui search selection dropdown" id="sources"></select>
+    <div class="container" id="menu">
+        <select class="ui search selection dropdown select" id="sources"></select>
     </div>
     <button class="ui primary button install-btn">Instalar Desktop App</button>
+    <div id="notif-section">
+
+    </div>
+    <div class="input-text ui input">
+        <input type="number" min="0" id="inp" placeholder="En Segundos...">
+    </div>
     <br>
     <div>
-        <main class="ui cards link"></main>
+        <main class="ui cards link article-section"></main>
     </div>
     <script src="app.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->

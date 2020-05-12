@@ -85,3 +85,31 @@ main {
     color: #445357;
     font-size: 38px !important;
 }
+
+.notify-btn {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 16px !important;
+    font-weight: 900;
+}
+
+.select {
+    position: relative;
+    margin: auto !important
+}
+
+.input-text {
+    position: absolute !important;
+    margin-top: 20px;
+    right: 25px;
+    width: 200px;
+    font-size: 16px !important;
+    font-weight: 900;
+}
+
+.article-section {
+    margin-top: 40px !important;
+}
