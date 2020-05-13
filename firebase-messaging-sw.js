@@ -21,9 +21,9 @@ firebase.initializeApp(firebaseConfig);
 // messages.
 const messaging = firebase.messaging();
 
+// Callback para recibir mensajes en SEGUNDO PLANO
 messaging.setBackgroundMessageHandler(function(payload) {
     console.log('[firebase-sw.js] Received background message ', payload);
-    // Customize notification here
     const notificationTitle = 'Background Message Title';
     const notificationOptions = {
         body: 'Background Message body.',
