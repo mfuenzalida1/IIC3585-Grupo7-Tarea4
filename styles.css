@@ -53,7 +53,7 @@ main {
 
 .image {
     width: 100% !important;
-    height: 180px;
+    height: 170px;
     margin: auto;
 }
 
@@ -67,11 +67,8 @@ main {
 }
 
 .install-btn {
-    position: absolute;
     width: 200px;
     height: 50px;
-    top: 20px;
-    right: 20px;
     font-size: 16px !important;
     font-weight: 900;
 }
@@ -87,9 +84,6 @@ main {
 }
 
 .notify-btn {
-    position: absolute;
-    top: 100px;
-    right: 20px;
     width: 200px;
     height: 50px;
     font-size: 16px !important;
@@ -97,19 +91,27 @@ main {
 }
 
 .select {
-    position: relative;
-    margin: auto !important
+    margin: auto !important;
+    height: 60px !important;
 }
 
 .input-text {
-    position: absolute !important;
-    margin-top: 20px;
-    right: 25px;
-    width: 200px;
+    width: 200px !important;
     font-size: 16px !important;
     font-weight: 900;
 }
 
 .article-section {
     margin-top: 40px !important;
+}
+
+.list {
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 !important;
+}
+
+.list li {
+    margin-top: 20px;
 }
